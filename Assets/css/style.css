@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
     margin-top: 0px;
     margin-bottom: 20px;
-    color: #10161A;
+    color: white;
 }
 
 h1 {
@@ -127,6 +127,7 @@ ul, ol {
 .md-padding {
     padding-top: 120px;
     padding-bottom: 120px;
+    background: #333;
 }
 
 .sm-padding {
@@ -138,13 +139,13 @@ ul, ol {
 /* --  background section  -- */
 
 .bg-grey {
-    background-color: #FAFAFA;
+    background-color: #333;
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
 }
 
 .bg-dark {
-    background-color: #1C1D21;
+    background-color: #333;
 }
 
 
@@ -241,7 +242,7 @@ input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focu
 }
 
 .white-btn {
-    background: #FFF;
+    background: #333;
     color: #10161A !important;
 }
 
