@@ -59,6 +59,7 @@
 
 		// drums.play();
 		guitar.play();
+		guitar.mute(true);
 		// violin.play();
 
 		// window.onload = function () {
@@ -91,9 +92,11 @@
 			// });
 			guitarMarker.addEventListener('markerFound', function() {
 				guitar.mute(false);
+				console.log("Marker Found");
 			});
 			guitarMarker.addEventListener('markerLost', function() {
 				guitar.mute(true);
+				console.log("Marker Lost");
 			});
 			// violinMarker.addEventListener('markerFound', function() {
 			// 	piano.mute(false);
