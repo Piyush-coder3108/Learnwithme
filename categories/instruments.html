@@ -23,17 +23,17 @@
         <!-- Using the asset management system. -->
 
         <!-- Guitar -->
-        <a-marker preset='custom' type='pattern' class="ar-marker" id="guitar-marker"  url='../Assets/Markers/instruments/guitar.patt'>
+        <a-marker preset='custom' type='pattern' id="guitar-marker"  url='../Assets/Markers/instruments/guitar.patt'>
             <a-entity gltf-model="#guitar" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
         </a-marker>
 
         <!-- Drum -->
-        <a-marker preset='custom' type='pattern' class="ar-marker" id="drums-marker" url='../Assets/Markers/instruments/drum.patt'>
+        <a-marker preset='custom' type='pattern' id="drums-marker" url='../Assets/Markers/instruments/drum.patt'>
             <a-entity gltf-model="#drum" position="0 0 0" scale="2 2 2" rotation="0 0 0"></a-entity>
         </a-marker>
 
         <!-- Violin -->
-        <a-marker preset='custom' type='pattern' class="ar-marker" id="violin-marker" url='../Assets/Markers/instruments/violin.patt'>
+        <a-marker preset='custom' type='pattern' id="violin-marker" url='../Assets/Markers/instruments/violin.patt'>
             <a-entity gltf-model="#violin" position="0 0 0" scale="0.2 0.2 0.2" rotation="0 0 0"></a-entity>
         </a-marker>
 
@@ -51,16 +51,18 @@
 			src: ['../Assets/audio/instruments_audio/violin.mp3']
 		});
 
-		var audioMap = {
-			"guitar-marker": guitar,
-			"drums-marker": drums,
-			"violin-marker": violin,
-		}
+		// var audioMap = {
+		// 	"guitar-marker": guitar,
+		// 	"drums-marker": drums,
+		// 	"violin-marker": violin,
+		// }
 
-		// drums.play();
+		drums.play();
+		drums.mute(true);
 		guitar.play();
 		guitar.mute(true);
-		// violin.play();
+		violin.play();
+        violin.mute(true);
 
 		// window.onload = function () {
 		// 	var arMarkers = document.getElementsByClassName("ar-marker");
@@ -84,26 +86,26 @@
 			const guitarMarker = document.getElementById('guitar-marker'); 
 			const violinMarker = document.getElementById('violin-marker');
 
-			// drumsMarker.addEventListener('markerFound', function() {
-			// 	drums.mute(false);
-			// });
-			// drumsMarker.addEventListener('markerLost', function() {
-			// 	drums.mute(true);
-			// });
+			drumsMarker.addEventListener('markerFound', function() {
+				drums.mute(false);
+			});
+			drumsMarker.addEventListener('markerLost', function() {
+				drums.mute(true);
+			});
 			guitarMarker.addEventListener('markerFound', function() {
 				guitar.mute(false);
-				console.log("Marker Found");
+				// console.log("Marker Found");
 			});
 			guitarMarker.addEventListener('markerLost', function() {
 				guitar.mute(true);
-				console.log("Marker Lost");
+				// console.log("Marker Lost");
 			});
-			// violinMarker.addEventListener('markerFound', function() {
-			// 	piano.mute(false);
-			// });
-			// violinMarker.addEventListener('markerLost', function() {
-			// 	piano.mute(true);
-			// });
+			violinMarker.addEventListener('markerFound', function() {
+				piano.mute(false);
+			});
+			violinMarker.addEventListener('markerLost', function() {
+				piano.mute(true);
+			});
 		}
 
 	</script>
