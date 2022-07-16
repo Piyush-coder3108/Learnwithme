@@ -170,7 +170,8 @@ ul, ol {
     right: 0;
     bottom: 0;
     opacity: .8;
-    background: #1C1D21;
+    background: #45484c57;
+    /* background: rgb(69 72 76 / 65%); */
 }
 
 
